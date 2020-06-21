@@ -1,0 +1,29 @@
+{
+  "name": "cra-template-swordsmith",
+  "version": "0.0.1",
+  "private": true,
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "roll20"
+  ],
+  "description": "A template for creating Roll20.net character sheets using Create React App.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrianthewriter/cra-template-swordsmith.git",
+    "directory": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/adrianthewriter/cra-template-swordsmith/issues"
+  },
+  "main": "template.json",
+  "files": [
+    "template",
+    "template.json"
+  ]
+}
