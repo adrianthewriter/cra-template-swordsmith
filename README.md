@@ -5,5 +5,11 @@ A template for creating [Roll20.net](https://roll20.net) character sheets using 
 ## Usage
 
 ```
-> npx create-react-app <project-name> --template adrianthewriter/cra-template-swordsmith
+npx create-react-app <project-name> --template adrianthewriter/cra-template-swordsmith
+```
+
+or
+
+```
+yarn create react-app <project-name> --template adrianthewriter/cra-template-swordsmith
 ```
