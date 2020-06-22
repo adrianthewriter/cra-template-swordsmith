@@ -3,5 +3,4 @@ module.exports = {
   DisableWebpackOutputPlugin: require('./disable-webpack-output'),
   PostrenderHtmlPlugin: require('./postrender-html-plugin'),
   RenderScriptsPlugin: require('./render-scripts-plugin'),
-  PrintChunksPlugin: require('./print-chunks-plugin'),
 }
