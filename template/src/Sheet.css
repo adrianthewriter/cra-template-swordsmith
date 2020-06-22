@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One|Karla|Space+Mono&display=swap');
+
+.root {
+  background: transparent;
+
+  & span {
+    background: green;
+  }
+}
