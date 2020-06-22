@@ -28,6 +28,12 @@
       "build": "craco build",
       "test": "craco test"
     },
-    "cracoConfig": "lib/config/cra.config.js"
+    "cracoConfig": "lib/config/cra.config.js",
+    "prettier": {
+      "trailingComma": "es5",
+      "tabWidth": 2,
+      "semi": false,
+      "singleQuote": true
+    }
   }
 }
