@@ -1,9 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Black+Ops+One|Karla|Space+Mono&display=swap');
 
+/* The root div (div.root) wraps your entire character sheet. Many swordsmith features rely
+ * on it, so don't remove or rename it. 
+ */
 .root {
-  background: transparent;
+  /* Custom CSS Selectors:
+   * Usage: :--selector-name {}
+   */
 
-  & span {
-    background: green;
+  @custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+  /* Custom CSS Properties:
+   * Usage: var(--property-name)
+   */
+
+  /* Fonts (custom fonts declared in @import rule above) */
+  --font-title: 'Black Ops One', sans-serif;
+  --font-heading: 'Karla', sans-serif;
+  --font-body: 'Karla', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Other Custom Properties */
+  --field-height: 20px;
+
+  /* Edit your custom root level styles after this point. Note that 
+   * component styles should be placed in component specific files.
+   */
+  background: transparent;
+  font: normal normal 14px var(--font-body);
+
+  & :--heading {
+    font-family: var(--font-heading);
+    font-weight: bold;
   }
 }

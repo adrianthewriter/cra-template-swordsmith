@@ -1,0 +1,391 @@
+/* Textfield and Textarea styles
+ */
+label,
+textarea,
+input[type='text'] {
+  width: stretch;
+  height: var(--field-height);
+  line-height: var(--field-height);
+
+  margin: 0;
+  padding: 0 3px;
+  border-radius: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background: rgba(245, 222, 179, 0.6);
+    transition: background-color 300ms ease;
+  }
+}
+
+label {
+  display: flex;
+  height: auto;
+}
+
+textarea {
+  resize: vertical;
+  height: auto;
+  min-height: 50px;
+}
+
+label > span,
+textarea,
+input[type='text'] {
+  color: black;
+  font: normal normal 14px var(--font-body);
+}
+
+label > input[type='text'],
+label > textarea {
+  flex: 1;
+  width: stretch;
+  margin-bottom: 0;
+  border-bottom: 0;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background: transparent;
+    transition: background-color 300ms ease;
+  }
+}
+
+label > span {
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: var(--field-height);
+  padding-right: 6px;
+}
+
+label > span::after {
+  content: ':';
+}
+
+/* Meta Box styles
+ */
+.meta {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: stretch;
+  height: fit-content;
+  padding-right: 0;
+
+  font: normal 9px / 1.5 monospace;
+  font-family: 'Space Mono', monospace;
+  color: #aaa;
+  background: #eee;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  & textarea {
+    padding: 3px;
+    font: normal 9px / 1.5 monospace;
+    font-family: 'Space Mono', monospace;
+  }
+
+  &:hover {
+    color: black;
+  }
+
+  &::before {
+    content: 'k';
+    display: flex;
+    margin: 0 3px;
+    font-family: 'Pictos Three';
+    font-style: normal;
+    font-size: 14px;
+    vertical-align: middle;
+    line-height: 20px;
+  }
+}
+
+/* Toggle styles 
+ */
+label.toggle {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: var(--field-height);
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  & input[type='checkbox'],
+  & input[type='radio'] {
+    display: block;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  & input[type='checkbox'] + span,
+  & input[type='radio'] + span {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    min-width: var(--field-height);
+    height: 100%;
+    padding: 0;
+    opacity: 1;
+
+    font: 14px / 20px var(--font-body);
+    font-weight: normal;
+    text-transform: unset;
+  }
+
+  & input[type='checkbox'],
+  & input[type='radio'] {
+    & + span::before,
+    & + span::after {
+      width: var(--field-height);
+      text-align: center;
+    }
+
+    & + span::before {
+      content: '□';
+      display: block;
+      height: 100%;
+      font: 20px / 15px var(--font-body);
+    }
+
+    &:checked + span::before {
+      content: '■';
+    }
+
+    & + span::after {
+      content: none;
+    }
+  }
+}
+
+/* Collapse Style */
+.toggle-collapse > input[type='checkbox'],
+.toggle-collapse > input[type='radio'] {
+  & + span::after {
+    content: '−' !important;
+    display: block;
+    height: 100%;
+    font: 16px / 18px var(--font-mono);
+    text-transform: none;
+  }
+
+  &:checked + span::after {
+    content: '+' !important;
+  }
+
+  & + span::before {
+    content: none !important;
+  }
+}
+
+/* Cog Style */
+.toggle-cog > input[type='checkbox'],
+.toggle-cog > input[type='radio'] {
+  & + span::after {
+    content: 'y' !important;
+    display: block;
+    height: 100%;
+    font: 12px / 18px 'Pictos';
+    text-transform: none;
+  }
+
+  &:checked + span::after {
+    color: firebrick;
+  }
+
+  & + span::before {
+    content: none !important;
+  }
+}
+
+/* Multitoggle styles
+ */
+label.multitoggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 70px;
+  height: 20px;
+  margin: 3px;
+  padding: 0;
+  cursor: pointer;
+
+  background: #eee;
+  border-radius: 6px;
+
+  font: normal normal 12px var(--font-body);
+
+  &:hover {
+    background: #ddd;
+  }
+
+  & input[type='radio'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: stretch;
+    margin: 0;
+    padding: 3px 6px;
+    opacity: 0;
+  }
+
+  & input[type='radio'] ~ span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: stretch;
+    height: stretch;
+    margin: 0;
+    padding: 1px 6px;
+    text-align: center;
+    opacity: 1;
+
+    font-weight: unset;
+    text-transform: unset;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+/* 3-Option Toggle */
+input[type='radio'].multitoggle-1-3 {
+  z-index: 2;
+}
+
+input[type='radio'].multitoggle-1-3:checked
+  + input[type='radio'].multitoggle-2-3,
+input[type='radio'].multitoggle-2-3:checked
+  + input[type='radio'].multitoggle-3-3 {
+  z-index: 3;
+}
+
+input[type='radio'].multitoggle-1-3:checked ~ span.multitoggle-1-3,
+input[type='radio'].multitoggle-2-3:checked ~ span.multitoggle-2-3,
+input[type='radio'].multitoggle-3-3:checked ~ span.multitoggle-3-3 {
+  display: block;
+}
+
+/* 4-Option Toggle */
+input[type='radio'].multitoggle-1-4 {
+  z-index: 2;
+}
+
+input[type='radio'].multitoggle-1-4:checked
+  + input[type='radio'].multitoggle-2-4,
+input[type='radio'].multitoggle-2-4:checked
+  + input[type='radio'].multitoggle-3-4,
+input[type='radio'].multitoggle-3-4:checked
+  + input[type='radio'].multitoggle-4-4 {
+  z-index: 3;
+}
+
+input[type='radio'].multitoggle-1-4:checked ~ span.multitoggle-1-4,
+input[type='radio'].multitoggle-2-4:checked ~ span.multitoggle-2-4,
+input[type='radio'].multitoggle-3-4:checked ~ span.multitoggle-3-4,
+input[type='radio'].multitoggle-4-4:checked ~ span.multitoggle-4-4 {
+  display: block;
+}
+
+/* Meter styles
+ */
+.meter {
+  position: relative;
+  display: flex;
+  width: fit-content;
+
+  & input[type='radio'] + .clear {
+    color: transparent;
+    background: white;
+    border: 1px #ccc dashed;
+  }
+
+  /* Hide actual radio */
+  & input[type='radio'] {
+    box-sizing: border-box;
+    position: relative;
+    opacity: 0;
+    width: 13px;
+    height: 20px;
+    margin: 0;
+    margin-right: -13px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  /* Fake radio */
+  & input[type='radio'] + span {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 13px;
+    height: 20px;
+    margin: 0;
+    margin-right: 3px;
+    color: black;
+    font: normal normal 12px / 18px var(--font-body);
+    text-align: center;
+    border: 1px solid black;
+    background: black;
+  }
+
+  & input[type='radio'] + span:last-child {
+    margin-right: 0;
+  }
+
+  /* Remove dot from all radios _after_ selected one */
+  & input[type='radio']:checked ~ input[type='radio'] + span {
+    color: transparent;
+    background: white;
+  }
+
+  /* Styles for 'clear' type */
+  & input[type='radio'] + .clear {
+    background: white;
+    border: 1px dashed lightgray;
+  }
+
+  & input[type='radio']:hover + .clear {
+    background: #eee;
+  }
+}
+
+/* Hover effects */
+.meter:hover {
+  & input[type='radio'] + span {
+    color: gray !important;
+    transition: color 300ms ease;
+  }
+
+  & input:checked ~ span:not(.clear),
+  & input:checked ~ input:hover + span:not(.clear) {
+    background: rgba(245, 222, 179, 0.6);
+    transition: background 300ms ease;
+  }
+
+  & input:checked + span:not(.clear),
+  & input:checked:hover + span:not(.clear) {
+    background: black;
+  }
+
+  & input:hover ~ input:checked ~ input + span,
+  & input:checked ~ input:hover ~ span,
+  & input:checked:hover ~ span {
+    background: white;
+  }
+}
