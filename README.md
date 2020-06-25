@@ -5,10 +5,8 @@ A template for creating [Roll20.net](https://roll20.net) character sheets using 
 ## Usage
 
 ```
-yarn create react-app <project-name> --template adrianthewriter/cra-template-swordsmith
+yarn create react-app <project-name> --template @adrianthewriter/cra-template-swordsmith
 ```
-
-**Note:** The command above don't actually work right now. Download the project as a folder and do `yarn create react-app <project-name> --template file:<path-to-folder>/cra-template-swordsmith` instead.
 
 ## Todo
 
