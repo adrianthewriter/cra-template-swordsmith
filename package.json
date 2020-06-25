@@ -1,7 +1,9 @@
 {
-  "name": "cra-template-swordsmith",
+  "name": "@adrianthewriter/cra-template-swordsmith",
   "version": "0.0.1",
-  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "keywords": [
     "react",
     "create-react-app",
