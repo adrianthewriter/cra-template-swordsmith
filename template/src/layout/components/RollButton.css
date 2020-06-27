@@ -1,0 +1,109 @@
+.root button[type='roll'] {
+  display: block;
+  height: var(--field-height);
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: black;
+  font-size: 12px;
+  line-height: var(--field-height);
+  text-shadow: none;
+  box-shadow: none;
+
+  &::before {
+    content: none;
+  }
+
+  &:hover {
+    color: firebrick;
+  }
+
+  &::after {
+    content: 'L';
+    display: inline-block;
+    padding: 0;
+    font-family: 'dicefontd6';
+  }
+
+  /* Text style buttons */
+  &.text {
+    &::after {
+      opacity: 0;
+      padding-left: 3px;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  /* Button style buttons */
+  &.button {
+    box-sizing: border-box;
+    position: relative;
+    flex: 1;
+    min-width: var(--field-height);
+    width: fit-content;
+    height: var(--field-height);
+    text-indent: var(--field-height);
+    overflow: hidden;
+
+    border: 1px solid black;
+    border-radius: 3px;
+    background: #eee;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+
+    & > span {
+      display: inline-block;
+      width: fit-content;
+      height: stretch;
+      padding: 0 calc(var(--field-height) / 4);
+      padding-left: 0;
+      text-indent: calc(var(--field-height) / 4);
+      line-height: calc(var(--field-height) - (var(--field-height) / 4));
+      vertical-align: middle;
+    }
+
+    &::after {
+      content: 'L';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: var(--field-height);
+      height: stretch;
+      text-indent: 0;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.6);
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active {
+      margin-top: 3px;
+      height: calc(var(--field-height) - 3px);
+      box-shadow: inset 0 -0.1em 0 -0.35em rgba(0, 0, 0, 0.1);
+
+      & > span {
+        line-height: calc(
+          var(--field-height) - (var(--field-height) / 4) - 3px
+        );
+      }
+    }
+
+    &:hover {
+      color: black;
+      background: radial-gradient(
+          circle,
+          rgba(0, 0, 0, 0.01) 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        ),
+        rgba(0, 0, 0, 0.05);
+    }
+  }
+}

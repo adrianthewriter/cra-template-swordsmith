@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import c from 'classnames'
 
 import styles from './FieldStyles.css'
 
@@ -12,7 +13,7 @@ const MultiToggle = ({ id, options, selected, ...props }) => {
         type="hidden"
         name={`attr_${id}-toggle`}
         value={selected}
-        className={styles.multitoggle}
+        className={c(styles.multitoggle, props.className) || null}
       />
     )
   } else {
@@ -24,11 +25,7 @@ const MultiToggle = ({ id, options, selected, ...props }) => {
           value={selected}
           className={styles.multitoggle}
         /> */}
-        <label
-          className={[styles.multitoggle, props.className]
-            .filter((x) => x) // Removes blanks
-            .join(' ')}
-        >
+        <label className={c(styles.multitoggle, props.className) || null}>
           {options.map((item, index) => (
             <input
               key={index}

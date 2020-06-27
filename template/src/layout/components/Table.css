@@ -1,0 +1,82 @@
+.tableheader {
+  display: flex;
+  height: var(--field-height);
+  align-items: flex-end;
+  border-bottom: 1px solid black;
+
+  & > span:first-child {
+    font-weight: bold;
+  }
+
+  & > span {
+    display: block;
+    flex: 1;
+    padding: 3px 6px;
+    font: normal normal 9px var(--font-heading);
+    text-transform: uppercase;
+    text-align: left;
+  }
+}
+
+.tablerow {
+  display: flex;
+  height: var(--field-height);
+  align-items: flex-end;
+  border-bottom: 1px dashed black;
+
+  & > input[type='text'] {
+    display: block;
+    flex: 1;
+    height: var(--field-height);
+    margin: 0;
+    padding: 3px 6px;
+    border-right: 1px solid black;
+    font: normal normal 12px / var(--field-height) var(--font-body);
+    text-align: left;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+/* Roll20 Generated Content */
+/* Repeating Fields */
+.repcontainer.editmode .tablerow :first-child {
+  text-indent: var(--field-height);
+}
+
+.repcontainer.editmode .repitem:hover .itemcontrol {
+  background-color: rgba(245, 222, 179, 0.6) !important;
+}
+
+.repitem .tablerow {
+  border-bottom: 1px dashed black;
+}
+
+.repitem:last-child .tablerow {
+  border-bottom: 1px solid black;
+}
+
+.itemcontrol {
+  z-index: 100;
+}
+
+.itemcontrol .btn {
+  box-sizing: border-box;
+  height: stretch;
+  padding: 0 6px;
+}
+
+.repcontrol {
+  overflow: hidden;
+}
+.repcontrol .btn {
+  padding: 3px 6px;
+  background: transparent;
+  color: black;
+  text-shadow: none;
+  box-shadow: none;
+  border: 0;
+  outline: 0;
+}

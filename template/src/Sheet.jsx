@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from './Sheet.css'
+import c from 'classnames'
+import { name } from '../package.json'
 
 import LayoutRoot from '@layout'
 
 export default () => (
-  <div
-    className={[
-      styles.root,
-      `sheet-${require('../package.json').name.replace('-', '')}`,
-    ].join(' ')}>
+  <div className={c(styles.root, `sheet-${name.replace(/-/g, '')}`) || null}>
     <LayoutRoot />
   </div>
 )

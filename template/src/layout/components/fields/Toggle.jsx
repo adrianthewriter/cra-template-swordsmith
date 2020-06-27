@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import c from 'classnames'
 
 import styles from './FieldStyles.css'
 
@@ -10,7 +11,7 @@ const Toggle = ({ id, label, type, value, multiple, checked, ...props }) => {
         type="hidden"
         name={`attr_${id}-toggle`}
         value={value ? value : checked ? 'checked' : ''}
-        className={styles.toggle}
+        className={c(styles.toggle, props.className) || null}
       />
     )
   } else {

@@ -4,12 +4,6 @@
  * on it, so don't remove or rename it. 
  */
 .root {
-  /* Custom CSS Selectors:
-   * Usage: :--selector-name {}
-   */
-
-  @custom-selector :--heading h1, h2, h3, h4, h5, h6;
-
   /* Custom CSS Properties:
    * Usage: var(--property-name)
    */
@@ -21,15 +15,31 @@
   --font-mono: 'Space Mono', monospace;
 
   /* Other Custom Properties */
+  --gap-width: 20px;
   --field-height: 20px;
+  --field-height-lg: 35px;
+
+  --field-hover-color: rgba(245, 222, 179, 0.6);
 
   /* Edit your custom root level styles after this point. Note that 
    * component styles should be placed in component specific files.
    */
+  position: relative;
   background: transparent;
   font: normal normal 14px var(--font-body);
 
-  & :--heading {
+  & *,
+  & *::before,
+  & *::after {
+    box-sizing: border-box;
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
     font-family: var(--font-heading);
     font-weight: bold;
   }

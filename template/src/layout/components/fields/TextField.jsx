@@ -1,11 +1,12 @@
 import React from 'react'
+import c from 'classnames'
 
 import './FieldStyles.css'
 
 export default ({ id, label, value, placeholder, ...props }) => {
   if (label) {
     return (
-      <label className={props.className}>
+      <label className={c(props.className) || null}>
         <span title={props.tooltip ? props.tooltip : null}>{label}</span>
         <input
           type="text"
@@ -22,7 +23,7 @@ export default ({ id, label, value, placeholder, ...props }) => {
         name={`attr_${id}`}
         value={value}
         placeholder={placeholder}
-        className={props.className}
+        className={c(props.className) || null}
       />
     )
   }

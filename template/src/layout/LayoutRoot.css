@@ -1,0 +1,21 @@
+.mode--character {
+  flex-direction: row;
+
+  & > h1 {
+    flex: none;
+    width: 100%;
+    margin-bottom: var(--field-height);
+  }
+}
+
+.sec--col1 {
+  flex: none;
+  width: stretch;
+  max-width: 296px;
+  margin-right: var(--gap-width);
+}
+
+.sec--col2 {
+  flex: 1;
+  max-width: calc(100% - var(--gap-width) - 296px);
+}
