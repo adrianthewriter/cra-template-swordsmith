@@ -8,7 +8,8 @@ input[type='text'] {
   line-height: var(--field-height);
 
   margin: 0;
-  padding: 0 3px;
+  padding: 0;
+  padding-left: 3px;
   border-radius: 0;
   border: 0;
   outline: 0;
@@ -45,6 +46,7 @@ label > textarea {
   flex: 1;
   width: stretch;
   margin-bottom: 0;
+  padding: 0 3px;
   border-bottom: 0;
 
   &:hover,
@@ -274,9 +276,9 @@ label.multitoggle {
   position: relative;
   display: flex;
   align-items: center;
-  width: 70px;
+  width: stretch;
   height: var(--field-height);
-  margin: 3px;
+  margin: 0;
   padding: 0;
   cursor: pointer;
 
@@ -310,9 +312,8 @@ label.multitoggle {
     height: stretch;
     margin: 0;
     padding: 1px 6px;
-    text-align: center;
-    opacity: 1;
 
+    text-align: center;
     font-weight: unset;
     text-transform: unset;
 
@@ -320,6 +321,20 @@ label.multitoggle {
       content: none;
     }
   }
+}
+/* 2-Option Toggle */
+input[type='radio'].multitoggle-1-2 {
+  z-index: 2;
+}
+
+input[type='radio'].multitoggle-1-2:checked
+  + input[type='radio'].multitoggle-2-2 {
+  z-index: 3;
+}
+
+input[type='radio'].multitoggle-1-2:checked ~ span.multitoggle-1-2,
+input[type='radio'].multitoggle-2-2:checked ~ span.multitoggle-2-2 {
+  display: block;
 }
 
 /* 3-Option Toggle */
@@ -430,20 +445,20 @@ input[type='radio'].multitoggle-4-4:checked ~ span.multitoggle-4-4 {
     transition: color 300ms ease;
   }
 
-  & input:checked ~ span:not(.clear),
-  & input:checked ~ input:hover + span:not(.clear) {
+  & input[type='radio']:checked ~ span:not(.clear),
+  & input[type='radio']:checked ~ input[type='radio']:hover + span:not(.clear) {
     background: var(--field-hover-color);
     transition: background-color 300ms ease;
   }
 
-  & input:checked + span:not(.clear),
-  & input:checked:hover + span:not(.clear) {
+  & input[type='radio']:checked + span:not(.clear),
+  & input[type='radio']:checked:hover + span:not(.clear) {
     background: black;
   }
 
-  & input:hover ~ input:checked ~ input + span,
-  & input:checked ~ input:hover ~ span,
-  & input:checked:hover ~ span {
+  & input[type='radio']:hover ~ input[type='radio']:checked ~ input + span,
+  & input[type='radio']:checked ~ input[type='radio']:hover ~ span,
+  & input[type='radio']:checked:hover ~ span {
     background: white;
   }
 }

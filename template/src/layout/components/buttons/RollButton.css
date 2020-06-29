@@ -45,7 +45,7 @@
   &.button {
     box-sizing: border-box;
     position: relative;
-    flex: 1;
+    flex: none;
     min-width: var(--field-height);
     width: fit-content;
     height: var(--field-height);

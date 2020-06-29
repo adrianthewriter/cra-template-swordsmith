@@ -25,6 +25,11 @@
    * component styles should be placed in component specific files.
    */
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  height: fit-content;
+  min-height: stretch;
+
   background: transparent;
   font: normal normal 14px var(--font-body);
 

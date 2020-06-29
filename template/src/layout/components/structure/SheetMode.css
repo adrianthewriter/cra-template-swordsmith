@@ -1,0 +1,8 @@
+.mode {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-start;
+  flex: 1;
+  width: stretch;
+}

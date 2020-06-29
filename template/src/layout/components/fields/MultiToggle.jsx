@@ -5,13 +5,13 @@ import c from 'classnames'
 import styles from './FieldStyles.css'
 
 const MultiToggle = ({ id, options, selected, ...props }) => {
-  selected = selected || options[0].toLowerCase()
+  selected = selected || options[0].id
 
   if (props.hidden) {
     return (
       <input
         type="hidden"
-        name={`attr_${id}-toggle`}
+        name={`attr_${id}`}
         value={selected}
         className={c(styles.multitoggle, props.className) || null}
       />
@@ -31,9 +31,9 @@ const MultiToggle = ({ id, options, selected, ...props }) => {
               key={index}
               className={styles[`multitoggle-${index + 1}-${options.length}`]}
               type="radio"
-              name={`attr_${id}-toggle`}
-              value={item.toLowerCase()}
-              checked={selected === item.toLowerCase()}
+              name={`attr_${id}`}
+              value={item.id}
+              checked={selected === item.id}
             />
           ))}
 
@@ -42,7 +42,7 @@ const MultiToggle = ({ id, options, selected, ...props }) => {
               key={index}
               className={styles[`multitoggle-${index + 1}-${options.length}`]}
             >
-              {item}
+              {item.label}
             </span>
           ))}
         </label>
@@ -53,7 +53,12 @@ const MultiToggle = ({ id, options, selected, ...props }) => {
 
 MultiToggle.propTypes = {
   id: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ).isRequired,
 }
 
 MultiToggle.defaultProps = {

@@ -1,7 +1,3 @@
 import React from 'react'
 
-export default () => (
-  <>
-    <span>TemplateRoot</span>
-  </>
-)
+export default () => <></>

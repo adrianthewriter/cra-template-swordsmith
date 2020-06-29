@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import TextField from './fields/TextField'
-import TextBox from './fields/TextBox'
-import MetaBox from './fields/MetaBox'
+import TextField from './TextField'
+import TextBox from './TextBox'
+import MetaBox from './MetaBox'
 
 const Field = ({ id, type, value, ...props }) => {
   if (props.hidden) {

@@ -16,6 +16,36 @@
     text-transform: uppercase;
     text-align: left;
   }
+
+  & > .roll {
+    flex: none;
+    width: var(--field-height);
+    padding: 3px 0;
+    text-align: center;
+
+    &::after {
+      content: 'L';
+      display: inline-block;
+      padding: 0;
+      font-family: 'dicefontd6';
+      font-size: 12px;
+    }
+  }
+
+  & > .view {
+    flex: none;
+    width: var(--field-height);
+    padding: 3px 0;
+    text-align: center;
+
+    &::after {
+      content: 'E';
+      display: inline-block;
+      padding: 0;
+      font-family: 'Pictos';
+      font-size: 12px;
+    }
+  }
 }
 
 .tablerow {

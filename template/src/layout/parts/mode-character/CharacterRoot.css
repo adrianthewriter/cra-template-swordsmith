@@ -1,11 +1,17 @@
 .mode--character {
-  flex-direction: row;
+  flex-flow: row wrap;
 
   & > h1 {
     flex: none;
     width: 100%;
     margin-bottom: var(--field-height);
   }
+}
+
+/* Hide when not in 'character' mode */
+input[type='hidden'][name*='sheet_mode']:not([value='character'])
+  ~ .mode--character {
+  display: none;
 }
 
 .sec--col1 {
