@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './Sheet.css'
 import c from 'classnames'
-import { name } from '../package.json'
+import { name } from '../../package.json'
 
-import { Settings, Header, CharacterSheet } from '@layout'
+import { Settings, Header, CharacterSheet } from '@layout/parts'
+import styles from './SheetRoot.css'
 
 export default () => (
   <div className={c(styles.root, `sheet-${name.replace(/-/g, '')}`) || null}>

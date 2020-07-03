@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Field } from '@components'
+import { Field } from 'swordsmith'
 
 const SheetMode = () => <Field hidden id="sheet_mode" value="character" />
 

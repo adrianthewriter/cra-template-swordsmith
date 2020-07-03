@@ -14,12 +14,16 @@
   --font-body: 'Karla', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  /* Other Custom Properties */
-  --gap-width: 20px;
-  --field-height: 20px;
-  --field-height-lg: 35px;
+  /* Spacing and Sizing */
+  --gap-size: 6px;
+  --base-size: 22px;
 
+  /* Other Custom Properties */
   --field-hover-color: rgba(245, 222, 179, 0.6);
+
+  --border-primary: 1px solid black;
+  --border-secondary: 1px dashed black;
+  --border-strong: 2px solid black;
 
   /* Edit your custom root level styles after this point. Note that 
    * component styles should be placed in component specific files.
@@ -36,7 +40,7 @@
   & *,
   & *::before,
   & *::after {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
 
   & h1,
@@ -45,7 +49,29 @@
   & h4,
   & h5,
   & h6 {
-    font-family: var(--font-heading);
-    font-weight: bold;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    font: normal normal 12px var(--font-heading);
+    text-transform: uppercase;
+
+    & > span {
+      color: inherit;
+      font: inherit;
+      text-transform: inherit;
+    }
+  }
+
+  & h1 {
+    font-size: 21px;
+  }
+
+  & h2 {
+    font-size: 16px;
+  }
+
+  & h3 {
+    font-size: 14px;
   }
 }

@@ -4,7 +4,7 @@
   & > h1 {
     flex: none;
     width: 100%;
-    margin-bottom: var(--field-height);
+    margin-bottom: var(--base-size);
   }
 }
 
@@ -17,11 +17,54 @@ input[type='hidden'][name*='sheet_mode']:not([value='character'])
 .sec--col1 {
   flex: none;
   width: stretch;
-  max-width: 296px;
+  max-width: 300px;
   margin-right: var(--gap-width);
 }
 
 .sec--col2 {
   flex: 1;
-  max-width: calc(100% - var(--gap-width) - 296px);
+  max-width: calc(100% - var(--gap-width) - 300px);
+}
+
+/* Custom styles */
+.fieldgroup > div .level {
+  flex: none;
+  width: 70px;
+}
+
+.table--abilities {
+  & .tableheader :nth-child(2) {
+    font-weight: bold;
+  }
+
+  & .tableheader :nth-child(3),
+  & .tablerow input:nth-child(3),
+  & .tableheader :nth-child(4),
+  & .tablerow input:nth-child(4) {
+    flex: none;
+    width: 40px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  & .tableheader :nth-child(4),
+  & .tablerow input:nth-child(4) {
+    border-right: 0;
+  }
+
+  & .drawer .buttonrow {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 3px 6px;
+
+    & > * {
+      flex: 1;
+      width: stretch;
+      margin-left: 6px;
+    }
+
+    & > :first-child {
+      margin-left: 0;
+    }
+  }
 }
