@@ -7,7 +7,7 @@
       "change-case": "^4.1.1",
       "classnames": "^2.2.6",
       "prettier": "^2.0.5",
-      "swordsmith": "npm:@adrianthewriter/swordsmith"
+      "@adrianthewriter/swordsmith": "^0.1.15"
     },
     "scripts": {
       "start": "swordsmith start",
