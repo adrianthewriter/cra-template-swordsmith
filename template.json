@@ -7,7 +7,7 @@
       "change-case": "^4.1.1",
       "classnames": "^2.2.6",
       "prettier": "^2.0.5",
-      "@adrianthewriter/swordsmith": "^0.1.16"
+      "@adrianthewriter/swordsmith": "^0.1.18"
     },
     "scripts": {
       "start": "swordsmith start",
