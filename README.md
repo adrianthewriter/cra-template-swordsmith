@@ -2,6 +2,8 @@
 
 A template for creating [Roll20.net](https://roll20.net) character sheets using [Create React App](https://github.com/facebook/create-react-app).
 
+__The Swordsmith project has been abandoned in favor of [Runesmith](https://github.com/adrianthewriter/runesmith). It is no longer maintained.__
+
 ## Usage
 
 ```
